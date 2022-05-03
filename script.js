@@ -10,13 +10,27 @@ const WINNING_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6]
 ]
+
 const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
 const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
-let circleTurn
-
+let circleTurn;
+var selectPlayer = document.getElementById('selectPlayer').value;
+// selct the user
+switch (selectPlayer){
+  case 'x':
+    circleTurn= false;
+    alert("your are player x");
+    break
+  case 'circle':
+    circleTurn=true;
+   alert("your are player o");
+    break;
+    default:
+      break;
+}
 startGame()
 
 restartButton.addEventListener('click', startGame)
